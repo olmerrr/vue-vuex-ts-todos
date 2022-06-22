@@ -1,18 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div>
+    <h2>{{title}}</h2>
+    <InputTodo />
+    <TodoList />
+  </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import InputTodo from './components/InputTodo.vue';
+import TodoList from './components/TodoList.vue';
 
 @Options({
   components: {
-    HelloWorld,
+    InputTodo,
+    TodoList
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+ public title = 'Your Todo List'
+
+//  public mounted() {
+//   console.log('Page loaded!');
+//  }
+}
 </script>
 
 <style lang="scss">
@@ -22,6 +33,9 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  max-width: 1400px;
 }
 </style>
