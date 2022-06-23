@@ -23,8 +23,10 @@ import store from '@/store'
 export default class InputTodo extends Vue {
   public newTodo = '';
   public addTodo(): void {
-    store.dispatch('addTodo', this.newTodo)
-    this.newTodo = '';
+    if (this.newTodo && this.newTodo.length) {
+      store.dispatch('addTodo', this.newTodo)
+      this.newTodo = '';
+    } else alert('Please, write Todo')
   }
 }
 </script>
@@ -39,16 +41,7 @@ export default class InputTodo extends Vue {
     height: 25px;
     width: 256px;
     margin-right: 25px;
-  }
-  .btn {
-    width: 120px;
-    height: 32px;
-    font-weight: 600;
-    font-size: 16px;
-    color: #fff;
-    border: none;
-    background-color: rgb(56, 50, 235);
-    border-radius: 4px;
+    font-size: 20px;
   }
 }
  

@@ -2,7 +2,7 @@
   <div class="todo">
     <span v-text="todo"></span>
     <button 
-      class="btn"
+      class="btn del"
       @click="deleteTodo"
     >Del</button>
   </div>
@@ -23,6 +23,15 @@ import {Options, Vue} from 'vue-class-component'
 export default class Todo extends Vue {}
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .todo {
+    margin: 18px 0;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 20px;
+    border-bottom: 1px dashed #ccc;
+  }
 </style>
